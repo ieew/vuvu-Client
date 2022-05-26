@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "vuvu-client"
+version = "0.0.1"
+description = "竹竹跟打器客户端"
+authors = ["qianxue <i@ieew.cc>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+wxPython310 = "^4.1.2-alpha.2"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+yapf = "^0.32.0"
+
+[[tool.poetry.source]]
+name = "清华大学开源镜像站"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
