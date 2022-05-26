@@ -1,8 +1,8 @@
 import wx
-from ui.noname import MyFrame1
+from ui.noname import window
 
 
 app = wx.App()
-frame = MyFrame1(None)
+frame = window(None)
 frame.Show()
 app.MainLoop()
