@@ -1,5 +1,5 @@
 import wx
-from ui.noname import window
+from ui import window
 
 
 app = wx.App()

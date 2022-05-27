@@ -45,7 +45,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">window</property>
+            <property name="name">Frame_window</property>
             <property name="pos"></property>
             <property name="size">800,600</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -57,6 +57,7 @@
             <property name="window_name"></property>
             <property name="window_style">wxTAB_TRAVERSAL</property>
             <property name="xrc_skip_sizer">1</property>
+            <event name="OnSize">on_size</event>
             <object class="wxBoxSizer" expanded="1">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer24</property>
@@ -1365,13 +1366,13 @@
                                 <property name="window_style"></property>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="0">
+                        <object class="sizeritem" expanded="1">
                             <property name="border">5</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">1</property>
-                            <object class="wxBoxSizer" expanded="0">
+                            <object class="wxBoxSizer" expanded="1">
                                 <property name="minimum_size">-1,20</property>
-                                <property name="name">bSizer4</property>
+                                <property name="name">self.bSizer4</property>
                                 <property name="orient">wxHORIZONTAL</property>
                                 <property name="permission">none</property>
                                 <object class="sizeritem" expanded="0">
