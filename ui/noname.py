@@ -90,6 +90,7 @@ class Frame_window ( wx.Frame ):
         成绩.Add( self.m_button今日3, 0, 0, 5 )
 
         self.m_button菜单 = wx.Button( self, wx.ID_ANY, u"菜单", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
+        self.m_button菜单.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.m_button菜单.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_button菜单.SetBackgroundColour( wx.Colour( 60, 67, 77 ) )
         self.m_button菜单.SetMinSize( wx.Size( 50,-1 ) )
@@ -103,6 +104,7 @@ class Frame_window ( wx.Frame ):
 
         信息.SetMinSize( wx.Size( -1,20 ) )
         self.文段 = wx.Button( self, wx.ID_ANY, u"无文段", wx.DefaultPosition, wx.Size( 60,20 ), wx.BORDER_NONE )
+        self.文段.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.文段.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.文段.SetBackgroundColour( wx.Colour( 174, 86, 89 ) )
 
@@ -115,6 +117,7 @@ class Frame_window ( wx.Frame ):
         信息.Add( self.收藏, 0, 0, 5 )
 
         self.标题 = wx.Button( self, wx.ID_ANY, u"无标题", wx.DefaultPosition, wx.Size( 500,20 ), wx.BORDER_NONE )
+        self.标题.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.标题.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.标题.SetBackgroundColour( wx.Colour( 52, 136, 136 ) )
 
@@ -127,18 +130,21 @@ class Frame_window ( wx.Frame ):
         信息.Add( self.汇总, 0, 0, 5 )
 
         self.文章 = wx.Button( self, wx.ID_ANY, u"文章", wx.DefaultPosition, wx.Size( 70,20 ), wx.BORDER_NONE )
+        self.文章.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.文章.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.文章.SetBackgroundColour( wx.Colour( 123, 121, 123 ) )
 
         信息.Add( self.文章, 0, 0, 5 )
 
         self.字数 = wx.Button( self, wx.ID_ANY, u"共124字", wx.Point( -1,-1 ), wx.Size( 60,20 ), wx.BORDER_NONE )
+        self.字数.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.字数.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.字数.SetBackgroundColour( wx.Colour( 174, 118, 66 ) )
 
         信息.Add( self.字数, 0, 0, 5 )
 
         self.群设置 = wx.Button( self, wx.ID_ANY, u"未设置", wx.DefaultPosition, wx.Size( 60,20 ), wx.BORDER_NONE )
+        self.群设置.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.群设置.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.群设置.SetBackgroundColour( wx.Colour( 13, 114, 17 ) )
 
@@ -152,8 +158,9 @@ class Frame_window ( wx.Frame ):
         进度.SetMinSize( wx.Size( -1,20 ) )
         self.m_gauge3 = wx.Gauge( self, wx.ID_ANY, 100, wx.DefaultPosition, wx.Size( 800,20 ), wx.GA_HORIZONTAL )
         self.m_gauge3.SetValue( 0 )
+        self.m_gauge3.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
         self.m_gauge3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
-        self.m_gauge3.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+        self.m_gauge3.SetBackgroundColour( wx.Colour( 60, 67, 77 ) )
 
         进度.Add( self.m_gauge3, 0, 0, 5 )
 
@@ -163,7 +170,8 @@ class Frame_window ( wx.Frame ):
 
         fgSizer1.Add( 状态栏, 1, wx.EXPAND, 5 )
 
-        self.m_textCtrl4 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.Point( -1,-1 ), wx.Size( 800,330 ), wx.TE_MULTILINE|wx.TE_READONLY )
+        self.m_textCtrl4 = wx.TextCtrl( self, wx.ID_ANY, u"欢迎使用添雨跟打器极致版。快捷键列表：F1暂停、F2成绩汇总、F3重打、F4载文，ALT+E从剪切板载文、F5换群、F6发送下一段文章（新）、F7分享发文、F8发送上次成绩。如您有什么建议，请到http://www.taliove.com回复留言。", wx.Point( -1,-1 ), wx.Size( 800,330 ), wx.TE_MULTILINE|wx.TE_READONLY )
+        self.m_textCtrl4.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.m_textCtrl4.SetBackgroundColour( wx.Colour( 228, 228, 228 ) )
 
         fgSizer1.Add( self.m_textCtrl4, 1, wx.EXPAND, 5 )
@@ -237,6 +245,7 @@ class Frame_window ( wx.Frame ):
         self.m_staticText跟打记录 = wx.StaticText( self, wx.ID_ANY, u"今0/总1035/连0/共3天", wx.DefaultPosition, wx.Size( -1,20 ), 0 )
         self.m_staticText跟打记录.Wrap( -1 )
 
+        self.m_staticText跟打记录.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.m_staticText跟打记录.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_staticText跟打记录.SetBackgroundColour( wx.Colour( 30, 129, 103 ) )
 
@@ -245,7 +254,8 @@ class Frame_window ( wx.Frame ):
 
         fgSizer1.Add( self.bSizer4, 1, wx.EXPAND, 5 )
 
-        self.m_textCtrl41 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 800,180 ), wx.TE_MULTILINE )
+        self.m_textCtrl41 = wx.TextCtrl( self, wx.ID_ANY, u"我我我我", wx.DefaultPosition, wx.Size( 800,180 ), wx.TE_MULTILINE )
+        self.m_textCtrl41.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
         self.m_textCtrl41.SetBackgroundColour( wx.Colour( 228, 228, 228 ) )
 
         fgSizer1.Add( self.m_textCtrl41, 1, wx.EXPAND, 5 )

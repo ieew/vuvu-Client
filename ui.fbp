@@ -662,7 +662,7 @@
                                                 <property name="fg">255,255,255</property>
                                                 <property name="floatable">1</property>
                                                 <property name="focus"></property>
-                                                <property name="font"></property>
+                                                <property name="font">微软雅黑,90,400,-1,70,0</property>
                                                 <property name="gripper">0</property>
                                                 <property name="hidden">0</property>
                                                 <property name="id">wxID_ANY</property>
@@ -746,7 +746,7 @@
                                                 <property name="fg">255,255,255</property>
                                                 <property name="floatable">1</property>
                                                 <property name="focus"></property>
-                                                <property name="font"></property>
+                                                <property name="font">微软雅黑,90,400,-1,70,0</property>
                                                 <property name="gripper">0</property>
                                                 <property name="hidden">0</property>
                                                 <property name="id">wxID_ANY</property>
@@ -892,7 +892,7 @@
                                                 <property name="fg">255,255,255</property>
                                                 <property name="floatable">1</property>
                                                 <property name="focus"></property>
-                                                <property name="font"></property>
+                                                <property name="font">微软雅黑,90,400,-1,70,0</property>
                                                 <property name="gripper">0</property>
                                                 <property name="hidden">0</property>
                                                 <property name="id">wxID_ANY</property>
@@ -1038,7 +1038,7 @@
                                                 <property name="fg">255,255,255</property>
                                                 <property name="floatable">1</property>
                                                 <property name="focus"></property>
-                                                <property name="font"></property>
+                                                <property name="font">微软雅黑,90,400,-1,70,0</property>
                                                 <property name="gripper">0</property>
                                                 <property name="hidden">0</property>
                                                 <property name="id">wxID_ANY</property>
@@ -1111,7 +1111,7 @@
                                                 <property name="fg">255,255,255</property>
                                                 <property name="floatable">1</property>
                                                 <property name="focus"></property>
-                                                <property name="font"></property>
+                                                <property name="font">微软雅黑,90,400,-1,70,0</property>
                                                 <property name="gripper">0</property>
                                                 <property name="hidden">0</property>
                                                 <property name="id">wxID_ANY</property>
@@ -1184,7 +1184,7 @@
                                                 <property name="fg">255,255,255</property>
                                                 <property name="floatable">1</property>
                                                 <property name="focus"></property>
-                                                <property name="font"></property>
+                                                <property name="font">微软雅黑,90,400,-1,70,0</property>
                                                 <property name="gripper">0</property>
                                                 <property name="hidden">0</property>
                                                 <property name="id">wxID_ANY</property>
@@ -1248,7 +1248,7 @@
                                                 <property name="aui_position">0</property>
                                                 <property name="aui_row">0</property>
                                                 <property name="best_size"></property>
-                                                <property name="bg">wxSYS_COLOUR_WINDOW</property>
+                                                <property name="bg">60,67,77</property>
                                                 <property name="caption"></property>
                                                 <property name="caption_visible">1</property>
                                                 <property name="center_pane">0</property>
@@ -1262,7 +1262,7 @@
                                                 <property name="enabled">1</property>
                                                 <property name="fg">wxSYS_COLOUR_WINDOW</property>
                                                 <property name="floatable">1</property>
-                                                <property name="font"></property>
+                                                <property name="font">,90,400,-1,70,0</property>
                                                 <property name="gripper">0</property>
                                                 <property name="hidden">0</property>
                                                 <property name="id">wxID_ANY</property>
@@ -1330,7 +1330,7 @@
                                 <property name="enabled">1</property>
                                 <property name="fg"></property>
                                 <property name="floatable">1</property>
-                                <property name="font"></property>
+                                <property name="font">微软雅黑,90,400,20,70,0</property>
                                 <property name="gripper">0</property>
                                 <property name="hidden">0</property>
                                 <property name="id">wxID_ANY</property>
@@ -1360,7 +1360,7 @@
                                 <property name="validator_style">wxFILTER_NONE</property>
                                 <property name="validator_type">wxDefaultValidator</property>
                                 <property name="validator_variable"></property>
-                                <property name="value"></property>
+                                <property name="value">欢迎使用添雨跟打器极致版。快捷键列表：F1暂停、F2成绩汇总、F3重打、F4载文，ALT+E从剪切板载文、F5换群、F6发送下一段文章（新）、F7分享发文、F8发送上次成绩。如您有什么建议，请到http://www.taliove.com回复留言。</property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
@@ -2143,7 +2143,7 @@
                                         <property name="enabled">1</property>
                                         <property name="fg">255,255,255</property>
                                         <property name="floatable">1</property>
-                                        <property name="font"></property>
+                                        <property name="font">微软雅黑,90,400,-1,70,0</property>
                                         <property name="gripper">0</property>
                                         <property name="hidden">0</property>
                                         <property name="id">wxID_ANY</property>
@@ -2206,7 +2206,7 @@
                                 <property name="enabled">1</property>
                                 <property name="fg"></property>
                                 <property name="floatable">1</property>
-                                <property name="font"></property>
+                                <property name="font">微软雅黑,90,400,15,70,0</property>
                                 <property name="gripper">0</property>
                                 <property name="hidden">0</property>
                                 <property name="id">wxID_ANY</property>
@@ -2236,7 +2236,7 @@
                                 <property name="validator_style">wxFILTER_NONE</property>
                                 <property name="validator_type">wxDefaultValidator</property>
                                 <property name="validator_variable"></property>
-                                <property name="value"></property>
+                                <property name="value">我我我我</property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
