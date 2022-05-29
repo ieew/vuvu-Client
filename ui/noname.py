@@ -170,11 +170,11 @@ class Frame_window ( wx.Frame ):
 
         fgSizer1.Add( 状态栏, 1, wx.EXPAND, 5 )
 
-        self.m_textCtrl4 = wx.TextCtrl( self, wx.ID_ANY, u"欢迎使用添雨跟打器极致版。快捷键列表：F1暂停、F2成绩汇总、F3重打、F4载文，ALT+E从剪切板载文、F5换群、F6发送下一段文章（新）、F7分享发文、F8发送上次成绩。如您有什么建议，请到http://www.taliove.com回复留言。", wx.Point( -1,-1 ), wx.Size( 800,330 ), wx.TE_MULTILINE|wx.TE_READONLY )
-        self.m_textCtrl4.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
-        self.m_textCtrl4.SetBackgroundColour( wx.Colour( 228, 228, 228 ) )
+        self.m_textCtrl1 = wx.TextCtrl( self, wx.ID_ANY, u"欢迎使用添雨跟打器极致版。快捷键列表：F1暂停、F2成绩汇总、F3重打、F4载文，ALT+E从剪切板载文、F5换群、F6发送下一段文章（新）、F7分享发文、F8发送上次成绩。如您有什么建议，请到http://www.taliove.com回复留言。", wx.Point( -1,-1 ), wx.Size( 800,330 ), wx.TE_MULTILINE|wx.TE_READONLY )
+        self.m_textCtrl1.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
+        self.m_textCtrl1.SetBackgroundColour( wx.Colour( 228, 228, 228 ) )
 
-        fgSizer1.Add( self.m_textCtrl4, 1, wx.EXPAND, 5 )
+        fgSizer1.Add( self.m_textCtrl1, 1, wx.EXPAND, 5 )
 
         self.bSizer4 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -254,11 +254,11 @@ class Frame_window ( wx.Frame ):
 
         fgSizer1.Add( self.bSizer4, 1, wx.EXPAND, 5 )
 
-        self.m_textCtrl41 = wx.TextCtrl( self, wx.ID_ANY, u"我我我我", wx.DefaultPosition, wx.Size( 800,180 ), wx.TE_MULTILINE )
-        self.m_textCtrl41.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
-        self.m_textCtrl41.SetBackgroundColour( wx.Colour( 228, 228, 228 ) )
+        self.m_textCtrl2 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 800,180 ), wx.TE_MULTILINE )
+        self.m_textCtrl2.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "微软雅黑" ) )
+        self.m_textCtrl2.SetBackgroundColour( wx.Colour( 228, 228, 228 ) )
 
-        fgSizer1.Add( self.m_textCtrl41, 1, wx.EXPAND, 5 )
+        fgSizer1.Add( self.m_textCtrl2, 1, wx.EXPAND, 5 )
 
 
         bSizer24.Add( fgSizer1, 1, wx.EXPAND, 5 )
@@ -274,6 +274,11 @@ class Frame_window ( wx.Frame ):
 
         # Connect Events
         self.Bind( wx.EVT_SIZE, self.on_size )
+        self.m_textCtrl2.Bind( wx.EVT_CHAR, self.on_char )
+        self.m_textCtrl2.Bind( wx.EVT_CHAR_HOOK, self.on_char_hook )
+        self.m_textCtrl2.Bind( wx.EVT_KEY_DOWN, self.on_key_down )
+        self.m_textCtrl2.Bind( wx.EVT_KEY_UP, self.on_key_up )
+        self.m_textCtrl2.Bind( wx.EVT_TEXT, self.on_text )
 
     def __del__( self ):
         pass
@@ -281,6 +286,21 @@ class Frame_window ( wx.Frame ):
 
     # Virtual event handlers, override them in your derived class
     def on_size( self, event ):
+        event.Skip()
+
+    def on_char( self, event ):
+        event.Skip()
+
+    def on_char_hook( self, event ):
+        event.Skip()
+
+    def on_key_down( self, event ):
+        event.Skip()
+
+    def on_key_up( self, event ):
+        event.Skip()
+
+    def on_text( self, event ):
         event.Skip()
 
 
