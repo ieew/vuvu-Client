@@ -57,6 +57,7 @@
             <property name="window_name"></property>
             <property name="window_style">wxTAB_TRAVERSAL</property>
             <property name="xrc_skip_sizer">1</property>
+            <event name="OnActivate">on_activate</event>
             <event name="OnSize">on_size</event>
             <object class="wxBoxSizer" expanded="1">
                 <property name="minimum_size"></property>
@@ -2243,6 +2244,7 @@
                                 <event name="OnChar">on_char</event>
                                 <event name="OnCharHook">on_char_hook</event>
                                 <event name="OnKeyDown">on_key_down</event>
+                                <event name="OnKeyUp">on_key_up</event>
                                 <event name="OnText">on_text</event>
                             </object>
                         </object>

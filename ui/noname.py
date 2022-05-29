@@ -273,6 +273,7 @@ class Frame_window ( wx.Frame ):
         self.Centre( wx.BOTH )
 
         # Connect Events
+        self.Bind( wx.EVT_ACTIVATE, self.on_activate )
         self.Bind( wx.EVT_SIZE, self.on_size )
         self.m_textCtrl2.Bind( wx.EVT_CHAR, self.on_char )
         self.m_textCtrl2.Bind( wx.EVT_CHAR_HOOK, self.on_char_hook )
@@ -285,6 +286,9 @@ class Frame_window ( wx.Frame ):
 
 
     # Virtual event handlers, override them in your derived class
+    def on_activate( self, event ):
+        event.Skip()
+
     def on_size( self, event ):
         event.Skip()
 
