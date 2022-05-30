@@ -20,6 +20,7 @@ class window(Frame_window):
         self.m_textCtrl1.SetEditable(False)
         self.m_textCtrl2.SetEditable(True)
         self.m_textCtrl2.Clear()
+        self.m_textCtrl2.SetFocus()
 
     def on_size(self, event: SizeEvent) -> None:
         self.m_textCtrl1.SetSize(-1, -1, self.Size[0] - 15, -1)
