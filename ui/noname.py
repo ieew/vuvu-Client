@@ -269,12 +269,25 @@ class Frame_window ( wx.Frame ):
 
         self.SetSizer( bSizer24 )
         self.Layout()
+        self.m_menubar1 = wx.MenuBar( 0 )
+        self.m_menu8 = wx.Menu()
+        self.m_menu3 = wx.Menu()
+        self.m_menu8.AppendSubMenu( self.m_menu3, u"MyMenu" )
+
+        self.m_menu4 = wx.Menu()
+        self.m_menu8.AppendSubMenu( self.m_menu4, u"MyMenu" )
+
+        self.m_menubar1.Append( self.m_menu8, u"MyMenu" )
+
+        self.SetMenuBar( self.m_menubar1 )
+
 
         self.Centre( wx.BOTH )
 
         # Connect Events
         self.Bind( wx.EVT_ACTIVATE, self.on_activate )
         self.Bind( wx.EVT_SIZE, self.on_size )
+        self.m_button菜单.Bind( wx.EVT_BUTTON, self.on_button_click )
         self.m_textCtrl2.Bind( wx.EVT_CHAR, self.on_char )
         self.m_textCtrl2.Bind( wx.EVT_CHAR_HOOK, self.on_char_hook )
         self.m_textCtrl2.Bind( wx.EVT_KEY_DOWN, self.on_key_down )
@@ -290,6 +303,9 @@ class Frame_window ( wx.Frame ):
         event.Skip()
 
     def on_size( self, event ):
+        event.Skip()
+
+    def on_button_click( self, event ):
         event.Skip()
 
     def on_char( self, event ):

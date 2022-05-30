@@ -51,3 +51,7 @@ class window(Frame_window):
         if event.GetActive():
             print(event)
         # return super().on_activate(event)
+
+    def on_button_click(self, event: CommandEvent):
+        
+        return super().on_button_click(event)
