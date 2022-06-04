@@ -1,3 +1,4 @@
+from time import sleep
 from .noname import Frame_window
 from wx.lib.agw import pygauge as PG
 import wx
@@ -12,6 +13,8 @@ class window(Frame_window):
         self.id_Alt_E = wx.NewIdRef()
         self.RegisterHotKey(self.id_Alt_E, wx.MOD_ALT, ord("E"))
         self.Bind(wx.EVT_HOTKEY, self.Alt_E, id=self.id_Alt_E)
+        self.start = 0
+        self.top = 0
 
     def Alt_E(self, event: KeyEvent) -> None:
         self.m_textCtrl1.SetEditable(True)
@@ -20,6 +23,9 @@ class window(Frame_window):
         self.m_textCtrl1.SetEditable(False)
         self.m_textCtrl2.SetEditable(True)
         self.m_textCtrl2.Clear()
+        self.m_textCtrl2.SetFocus()
+        sleep(0.5)
+        self.m_textCtrl2.Bind(wx.EVT_KEY_DOWN, self.start_editing_event)
 
     def on_size(self, event: SizeEvent) -> None:
         self.m_textCtrl1.SetSize(-1, -1, self.Size[0] - 15, -1)
@@ -33,11 +39,9 @@ class window(Frame_window):
         return super().on_key_down(event)
 
     def on_key_up(self, event: KeyEvent) -> None:
-        if self.m_textCtrl1.GetValue() == self.m_textCtrl2.GetValue():
-            self.m_textCtrl2.SetEditable(False)
         print(self.m_textCtrl2.GetValue())
-        print(event.GetUnicodeKey())
-        print(event.GetRawKeyFlags())
+        # print(event.GetUnicodeKey())
+        # print(event.GetRawKeyFlags())
         return super().on_key_up(event)
 
     def on_char(self, event: KeyEvent) -> None:
@@ -50,3 +54,21 @@ class window(Frame_window):
         if event.GetActive():
             print(event)
         # return super().on_activate(event)
+
+    def start_editing_event(self, event: KeyEvent):
+        self.top = 1
+        # self.m_textCtrl2.Unbind(self.start_editing_event)
+        self.m_textCtrl2.Unbind(wx.EVT_KEY_DOWN, handler=self.start_editing_event)  # noqa
+        self.m_textCtrl2.Bind(wx.EVT_KEY_UP, self.end_editing_event)
+        print("Start")
+        event.Skip()
+
+    def end_editing_event(self, event: KeyEvent):
+        print(111111111111111)
+        if self.top:
+            if self.m_textCtrl1.GetValue() == self.m_textCtrl2.GetValue():
+                self.m_textCtrl2.Unbind(wx.EVT_KEY_UP, handler=self.end_editing_event)  # noqa
+                self.m_textCtrl2.SetEditable(False)
+                self.top = 0
+                print("End")
+        event.Skip()
