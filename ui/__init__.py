@@ -1,8 +1,9 @@
-from time import sleep
+import time
 from .noname import Frame_window
 from wx.lib.agw import pygauge as PG
 import wx
-from wx.core import KeyEvent, CommandEvent, SizeEvent, ActivateEvent
+from wx.core import KeyEvent, SizeEvent, ActivateEvent
+import threading
 
 wx.Gauge = PG.PyGauge  # 将 wx.Gauge 篡改为 PyGauge 以实现特定样式的进度条
 
@@ -24,7 +25,7 @@ class window(Frame_window):
         self.m_textCtrl2.SetEditable(True)
         self.m_textCtrl2.Clear()
         self.m_textCtrl2.SetFocus()
-        sleep(0.5)
+        time.sleep(0.5)
         self.m_textCtrl2.Bind(wx.EVT_KEY_DOWN, self.start_editing_event)
 
     def on_size(self, event: SizeEvent) -> None:
@@ -32,23 +33,11 @@ class window(Frame_window):
         self.m_textCtrl2.SetSize(-1, -1, self.Size[0] - 15, -1)
         return super().on_size(event)
 
-    def on_text(self, event: CommandEvent) -> None:
-        return super().on_text(event)
-
-    def on_key_down(self, event: KeyEvent) -> None:
-        return super().on_key_down(event)
-
     def on_key_up(self, event: KeyEvent) -> None:
         print(self.m_textCtrl2.GetValue())
         # print(event.GetUnicodeKey())
         # print(event.GetRawKeyFlags())
         return super().on_key_up(event)
-
-    def on_char(self, event: KeyEvent) -> None:
-        return super().on_char(event)
-
-    def on_char_hook(self, event: KeyEvent) -> None:
-        return super().on_char_hook(event)
 
     def on_activate(self, event: ActivateEvent) -> None:
         if event.GetActive():
@@ -57,10 +46,11 @@ class window(Frame_window):
 
     def start_editing_event(self, event: KeyEvent):
         self.top = 1
-        # self.m_textCtrl2.Unbind(self.start_editing_event)
         self.m_textCtrl2.Unbind(wx.EVT_KEY_DOWN, handler=self.start_editing_event)  # noqa
         self.m_textCtrl2.Bind(wx.EVT_KEY_UP, self.end_editing_event)
         print("Start")
+        self.threading = Calculator(parent=self)
+        self.threading.start()
         event.Skip()
 
     def end_editing_event(self, event: KeyEvent):
@@ -70,4 +60,32 @@ class window(Frame_window):
                 self.m_textCtrl2.SetEditable(False)
                 self.top = 0
                 print("End")
+                self.threading.stop()
         event.Skip()
+
+
+class Calculator(threading.Thread):
+    def __init__(self, parent: window) -> None:
+        self.parent = parent
+        self.start_time = 0.0
+        self.end_time = 0
+        self.state = 0
+        super().__init__(name="Calculator", daemon=True)
+
+    def run(self):
+        while self.state:
+            self.parent.m_button成绩1.SetLabelText(str("%.2f" % (time.time() - self.start_time)))  # noqa
+            # self.parent.m_button成绩2.SetLabelText()
+            # self.parent.m_button成绩3.SetLabelText()
+            # self.parent.m_button今日1.SetLabelText()
+            # self.parent.m_button今日2.SetLabelText()
+            # self.parent.m_button今日3.SetLabelText()
+            time.sleep(0.001)
+
+    def start(self):
+        self.start_time = time.time()
+        self.state = 1
+        super().start()
+
+    def stop(self):
+        self.state = 0
