@@ -64,7 +64,6 @@ class window(Frame_window):
         event.Skip()
 
     def end_editing_event(self, event: KeyEvent):
-        print(111111111111111)
         if self.top:
             if self.m_textCtrl1.GetValue() == self.m_textCtrl2.GetValue():
                 self.m_textCtrl2.Unbind(wx.EVT_KEY_UP, handler=self.end_editing_event)  # noqa
