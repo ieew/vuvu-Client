@@ -13,7 +13,7 @@ class window(Frame_window):
         super().__init__(parent)
         self.id_CTRL_E = wx.NewIdRef()
         self.RegisterHotKey(self.id_CTRL_E, wx.MOD_CMD, ord("E"))
-        self.Bind(wx.EVT_HOTKEY, self.Alt_E, id=self.id_Alt_E)
+        self.Bind(wx.EVT_HOTKEY, self.Alt_E, id=self.id_CTRL_E)
         self.start = 0
         self.top = 0
 
