@@ -24,7 +24,7 @@ class window(Frame_window):
         self.m_textCtrl1.SetEditable(False)
         self.m_textCtrl2.SetEditable(True)
         self.m_textCtrl2.Clear()
-        time.sleep(0.5)
+        time.sleep(0.2)
         self.m_textCtrl2.SetFocus()
         self.m_textCtrl2.Bind(wx.EVT_KEY_DOWN, self.start_editing_event)
 
