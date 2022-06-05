@@ -11,8 +11,8 @@ wx.Gauge = PG.PyGauge  # 将 wx.Gauge 篡改为 PyGauge 以实现特定样式的
 class window(Frame_window):
     def __init__(self, parent) -> None:
         super().__init__(parent)
-        self.id_Alt_E = wx.NewIdRef()
-        self.RegisterHotKey(self.id_Alt_E, wx.MOD_ALT, ord("E"))
+        self.id_CTRL_E = wx.NewIdRef()
+        self.RegisterHotKey(self.id_CTRL_E, wx.MOD_CMD, ord("E"))
         self.Bind(wx.EVT_HOTKEY, self.Alt_E, id=self.id_Alt_E)
         self.start = 0
         self.top = 0
@@ -24,8 +24,8 @@ class window(Frame_window):
         self.m_textCtrl1.SetEditable(False)
         self.m_textCtrl2.SetEditable(True)
         self.m_textCtrl2.Clear()
-        self.m_textCtrl2.SetFocus()
         time.sleep(0.5)
+        self.m_textCtrl2.SetFocus()
         self.m_textCtrl2.Bind(wx.EVT_KEY_DOWN, self.start_editing_event)
 
     def on_size(self, event: SizeEvent) -> None:
@@ -41,8 +41,10 @@ class window(Frame_window):
 
     def on_activate(self, event: ActivateEvent) -> None:
         if event.GetActive():
-            print(event)
-        # return super().on_activate(event)
+            if self.top:
+                print(event)
+                self.m_textCtrl2.SetFocus()
+        event.Skip()
 
     def start_editing_event(self, event: KeyEvent):
         self.top = 1

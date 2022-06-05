@@ -269,18 +269,6 @@ class Frame_window ( wx.Frame ):
 
         self.SetSizer( bSizer24 )
         self.Layout()
-        self.m_menubar1 = wx.MenuBar( 0 )
-        self.m_menu8 = wx.Menu()
-        self.m_menu3 = wx.Menu()
-        self.m_menu8.AppendSubMenu( self.m_menu3, u"MyMenu" )
-
-        self.m_menu4 = wx.Menu()
-        self.m_menu8.AppendSubMenu( self.m_menu4, u"MyMenu" )
-
-        self.m_menubar1.Append( self.m_menu8, u"MyMenu" )
-
-        self.SetMenuBar( self.m_menubar1 )
-
 
         self.Centre( wx.BOTH )
 
