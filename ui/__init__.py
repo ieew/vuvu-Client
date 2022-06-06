@@ -16,6 +16,7 @@ class window(Frame_window):
         self.Bind(wx.EVT_HOTKEY, self.Alt_E, id=self.id_CTRL_E)
         self.start = 0
         self.top = 0
+        self.keystrokes = 0
 
     def Alt_E(self, event: KeyEvent) -> None:
         self.m_textCtrl1.SetEditable(True)
@@ -33,11 +34,16 @@ class window(Frame_window):
         self.m_textCtrl2.SetSize(-1, -1, self.Size[0] - 15, -1)
         return super().on_size(event)
 
+    def on_key_down(self, event: KeyEvent):
+        if self.top:
+            self.keystrokes += 1
+        event.Skip()
+
     def on_key_up(self, event: KeyEvent) -> None:
         print(self.m_textCtrl2.GetValue())
         # print(event.GetUnicodeKey())
         # print(event.GetRawKeyFlags())
-        return super().on_key_up(event)
+        event.Skip()
 
     def on_activate(self, event: ActivateEvent) -> None:
         if event.GetActive():
@@ -63,6 +69,7 @@ class window(Frame_window):
                 self.top = 0
                 print("End")
                 self.threading.stop()
+                self.keystrokes = 0
         event.Skip()
 
 
@@ -76,7 +83,8 @@ class Calculator(threading.Thread):
 
     def run(self):
         while self.state:
-            self.parent.m_button成绩1.SetLabelText(str("%.2f" % (time.time() - self.start_time)))  # noqa
+            self.parent.m_button成绩1.SetLabelText("%.2f" % (time.time() - self.start_time))  # noqa
+            self.parent.m_button成绩2.SetLabelText("%.2f" % (self.parent.keystrokes))
             # self.parent.m_button成绩2.SetLabelText()
             # self.parent.m_button成绩3.SetLabelText()
             # self.parent.m_button今日1.SetLabelText()
