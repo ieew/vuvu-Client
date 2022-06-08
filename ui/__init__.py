@@ -83,8 +83,9 @@ class Calculator(threading.Thread):
 
     def run(self):
         while self.state:
-            self.parent.m_button成绩1.SetLabelText("%.2f" % (time.time() - self.start_time))  # noqa
-            self.parent.m_button成绩2.SetLabelText("%.2f" % (self.parent.keystrokes))
+            t = time.time() - self.start_time
+            self.parent.m_button成绩1.SetLabelText("%.2f" % (len(self.parent.m_textCtrl2.GetValue()) / t * 60))  # noqa
+            self.parent.m_button成绩2.SetLabelText("%.2f" % (self.parent.keystrokes / t))
             # self.parent.m_button成绩2.SetLabelText()
             # self.parent.m_button成绩3.SetLabelText()
             # self.parent.m_button今日1.SetLabelText()
