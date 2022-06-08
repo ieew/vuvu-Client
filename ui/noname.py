@@ -50,6 +50,7 @@ class Frame_window ( wx.Frame ):
         self.m_button成绩1 = wx.Button( self, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
         self.m_button成绩1.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_button成绩1.SetBackgroundColour( wx.Colour( 60, 67, 77 ) )
+        self.m_button成绩1.SetToolTip( u"速度" )
         self.m_button成绩1.SetMinSize( wx.Size( 115,-1 ) )
 
         成绩.Add( self.m_button成绩1, 0, 0, 5 )
@@ -57,6 +58,7 @@ class Frame_window ( wx.Frame ):
         self.m_button成绩2 = wx.Button( self, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
         self.m_button成绩2.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_button成绩2.SetBackgroundColour( wx.Colour( 77, 83, 91 ) )
+        self.m_button成绩2.SetToolTip( u"击键" )
         self.m_button成绩2.SetMinSize( wx.Size( 115,-1 ) )
 
         成绩.Add( self.m_button成绩2, 0, 0, 5 )
@@ -64,6 +66,7 @@ class Frame_window ( wx.Frame ):
         self.m_button成绩3 = wx.Button( self, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
         self.m_button成绩3.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_button成绩3.SetBackgroundColour( wx.Colour( 88, 93, 100 ) )
+        self.m_button成绩3.SetToolTip( u"码长" )
         self.m_button成绩3.SetMinSize( wx.Size( 115,-1 ) )
 
         成绩.Add( self.m_button成绩3, 0, 0, 5 )
@@ -71,6 +74,7 @@ class Frame_window ( wx.Frame ):
         self.m_button今日1 = wx.Button( self, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
         self.m_button今日1.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_button今日1.SetBackgroundColour( wx.Colour( 60, 67, 77 ) )
+        self.m_button今日1.SetToolTip( u"暂无意义" )
         self.m_button今日1.SetMinSize( wx.Size( 115,-1 ) )
 
         成绩.Add( self.m_button今日1, 0, 0, 5 )
@@ -78,6 +82,7 @@ class Frame_window ( wx.Frame ):
         self.m_button今日2 = wx.Button( self, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
         self.m_button今日2.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_button今日2.SetBackgroundColour( wx.Colour( 77, 83, 91 ) )
+        self.m_button今日2.SetToolTip( u"暂无意义" )
         self.m_button今日2.SetMinSize( wx.Size( 115,-1 ) )
 
         成绩.Add( self.m_button今日2, 0, 0, 5 )
@@ -85,6 +90,7 @@ class Frame_window ( wx.Frame ):
         self.m_button今日3 = wx.Button( self, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
         self.m_button今日3.SetForegroundColour( wx.Colour( 255, 255, 255 ) )
         self.m_button今日3.SetBackgroundColour( wx.Colour( 88, 93, 100 ) )
+        self.m_button今日3.SetToolTip( u"暂无意义" )
         self.m_button今日3.SetMinSize( wx.Size( 115,-1 ) )
 
         成绩.Add( self.m_button今日3, 0, 0, 5 )
@@ -262,9 +268,6 @@ class Frame_window ( wx.Frame ):
 
 
         bSizer24.Add( fgSizer1, 1, wx.EXPAND, 5 )
-
-
-        bSizer24.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 
         self.SetSizer( bSizer24 )

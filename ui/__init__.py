@@ -54,6 +54,7 @@ class window(Frame_window):
 
     def start_editing_event(self, event: KeyEvent):
         self.top = 1
+        self.keystrokes = 0
         self.m_textCtrl2.Unbind(wx.EVT_KEY_DOWN, handler=self.start_editing_event)  # noqa
         self.m_textCtrl2.Bind(wx.EVT_KEY_UP, self.end_editing_event)
         print("Start")
@@ -69,7 +70,6 @@ class window(Frame_window):
                 self.top = 0
                 print("End")
                 self.threading.stop()
-                self.keystrokes = 0
         event.Skip()
 
 
@@ -83,14 +83,14 @@ class Calculator(threading.Thread):
 
     def run(self):
         while self.state:
-            t = time.time() - self.start_time
-            self.parent.m_button成绩1.SetLabelText("%.2f" % (len(self.parent.m_textCtrl2.GetValue()) / t * 60))  # noqa
-            self.parent.m_button成绩2.SetLabelText("%.2f" % (self.parent.keystrokes / t))
-            # self.parent.m_button成绩2.SetLabelText()
-            # self.parent.m_button成绩3.SetLabelText()
-            # self.parent.m_button今日1.SetLabelText()
-            # self.parent.m_button今日2.SetLabelText()
-            # self.parent.m_button今日3.SetLabelText()
+            if (text_len := len(self.parent.m_textCtrl2.GetValue())) > 0:
+                t = time.time() - self.start_time
+                self.parent.m_button成绩1.SetLabelText("%.2f" % (text_len / t * 60))  # noqa
+                self.parent.m_button成绩2.SetLabelText("%.2f" % (self.parent.keystrokes / t))
+                self.parent.m_button成绩3.SetLabelText("%.2f" % (self.parent.keystrokes / text_len))
+                # self.parent.m_button今日1.SetLabelText()
+                # self.parent.m_button今日2.SetLabelText()
+                # self.parent.m_button今日3.SetLabelText()
             time.sleep(0.001)
 
     def start(self):
